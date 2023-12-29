@@ -14,6 +14,7 @@
 
 .profile-details {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   /* align-items: center; */
@@ -67,7 +68,43 @@
 .typing-home {
   font-size: Clamp(15px, 1.7vw, 25px);
 }
+.stars{
+  /* margin-right: 250px; */
+  /* padding-bottom: 250px; */
+  display: flex;
+  /* gap: 10px; */
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: flex-start; */
+  /* border: 1px solid red; */
+  width: 100%;
+  padding-left: 20px;
+  /* margin-bottom: 150px; */
+  box-sizing: border-box;
+  
+}
+.star-1,.star-3{
+  width: 20%;
+ display: flex;
+ justify-content: center;
+ 
+}
 
+.star-2{
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  width: 20%;
+}
+.stars img {
+  width: 25px; /* Set the initial width of the star images */
+  height: 25px; /* Set the initial height of the star images */
+  transition: all 0.3s ease; /* Add a smooth transition effect */
+}
+
+.stars:hover img {
+  transform: scale(1.5); /* Increase the size on hover */
+}
 .only-details {
   display: flex;
   flex-direction: column;

@@ -245,7 +245,7 @@ function AboutSkills() {
                         className="items-dragging"
                         onDragStart={() => handleDragStart(item)}
                       >
-                        <img src={item.skillPhoto} alt="" />
+                        <img src={item.skillPhoto} alt="" draggable={false}/>
                         <span>{item.skillName}</span>
                       </div>
                     </Tilt>
@@ -270,7 +270,7 @@ function AboutSkills() {
                         className="items-dragging"
                         onDragStart={() => handleDragStart(item)}
                       >
-                        <img src={item.skillPhoto} alt="" />
+                        <img src={item.skillPhoto} alt="" draggable={false}/>
                         <span>{item.skillName}</span>
                       </div>
                     </Tilt>
@@ -295,7 +295,7 @@ function AboutSkills() {
                         className="items-dragging"
                         onDragStart={() => handleDragStart(item)}
                       >
-                        <img src={item.skillPhoto} alt="" />
+                        <img src={item.skillPhoto} alt="" draggable={false}/>
                         <span>{item.skillName}</span>
                       </div>
                     </Tilt>
@@ -332,25 +332,11 @@ function AboutSkills() {
                   <p>
                     Description:{" "}
                     {droppedItem.skillDescription.map((item, id) => (
-                      <ul key={id}>
+                      <div key={id}>
                         <li>{item}</li>
-                      </ul>
+                      </div>
                     ))}
-                    <li>
-                      <span>
-                        drag and drop the skill to know more about my knowledge
-                      </span>
-                    </li>
-                    <li>
-                      <span>
-                        drag and drop the skill to know more about my knowledge
-                      </span>
-                    </li>
-                    <li>
-                      <span>
-                        drag and drop the skill to know more about my knowledge
-                      </span>
-                    </li>
+                    
                   </p>
                 </div>
               ) : (

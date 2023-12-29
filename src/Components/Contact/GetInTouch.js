@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Typed from "react-typed";
 import axios from "axios";
-import { ASSETS_URL,BASE_URL } from '../../Constant';
+import { ASSETS_URL, BASE_URL } from '../../Constant';
 import { useNavigate } from "react-router-dom";
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 
 
-function GetInTouch({ profileDetails}) {
+function GetInTouch({ profileDetails }) {
   console.log(profileDetails.designations)
-  const [clientName,setClientName] = useState('')
-  const [clientEmail,setClientEmail]=useState('')
-  const [clientPhoneNumber,setClientPhoneNumber]=useState('')
-  const [clientMessage,setClientMessage]=useState('')
+  const [clientName, setClientName] = useState('')
+  const [clientEmail, setClientEmail] = useState('')
+  const [clientPhoneNumber, setClientPhoneNumber] = useState('')
+  const [clientMessage, setClientMessage] = useState('')
+  const [showMessage, setShowMessage] = useState(false);
 
 
   const toastStyle = {
@@ -26,47 +27,52 @@ function GetInTouch({ profileDetails}) {
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // Phone number validation regex pattern (basic example, adjust as needed)
-  const phoneNumberPattern = /^\d{10}$/;
+    // Phone number validation regex pattern (basic example, adjust as needed)
+    const phoneNumberPattern = /^\d{10}$/;
 
-  // Basic form validation
-  if (!clientName) {
-    // If any field is empty, show an error toast
-    toast.error("Please enter a valid name", toastStyle);
-    return;
-  }
+    // Basic form validation
+    if (!clientName) {
+      // If any field is empty, show an error toast
+      toast.error("Please enter a valid name", toastStyle);
+      return;
+    }
 
-  // Email validation
-  if (!emailPattern.test(clientEmail) ||!clientEmail ) {
-    // If email is not valid, show an error toast
-    toast.error("Please enter a valid email address", toastStyle);
-    return;
-  }
+    // Email validation
+    if (!emailPattern.test(clientEmail) || !clientEmail) {
+      // If email is not valid, show an error toast
+      toast.error("Please enter a valid email address", toastStyle);
+      return;
+    }
 
-  // Phone number validation
-  if (!phoneNumberPattern.test(clientPhoneNumber)) {
-    // If phone number is not valid, show an error toast
-    toast.error("Please enter a valid 10-digit phone number", toastStyle);
-    return;
-  }
-  if(!clientMessage){
-    toast.error("Please fill message", toastStyle);
-  }
+    // Phone number validation
+    if (!phoneNumberPattern.test(clientPhoneNumber)) {
+      // If phone number is not valid, show an error toast
+      toast.error("Please enter a valid 10-digit phone number", toastStyle);
+      return;
+    }
+    if (!clientMessage) {
+      toast.error("Please fill message", toastStyle);
+    }
     try {
       const createProjects = await axios.post(
         BASE_URL + "/contact/create-contact-details",
         {
           clientName,
-            clientEmail,
-            clientPhoneNumber,
-            clientMessage
+          clientEmail,
+          clientPhoneNumber,
+          clientMessage
         }
       );
-      toast.success("Thanks for reviewing my portfolio , I got your response",toastStyle);
+      toast.success("Thanks for reviewing my portfolio , I got your response", toastStyle);
+      setShowMessage(true);
+      setTimeout(() => {
+        setShowMessage(false);
+      }, 5000);
       setClientEmail('')
       setClientMessage('')
       setClientName('')
       setClientPhoneNumber('')
+
       console.log(createProjects.data.data)
     } catch (error) {
       console.log(error);
@@ -85,7 +91,7 @@ function GetInTouch({ profileDetails}) {
   //     const profileDetails = await axios.get(
   //       BASE_URL + "/user/get-person-details"
   //     );
-      
+
   //     setProfileDetails(profileDetails.data.data.user_details.designations);
   //     setProfilePhoto(profileDetails.data.data.user_details.photo)
   //     setFullName(profileDetails.data.data.user_details.fullName)
@@ -106,7 +112,7 @@ function GetInTouch({ profileDetails}) {
   const handleBack = () => {
     nav(-1);
   };
- 
+
 
   return (
     <div className="get-in-touch">
@@ -124,12 +130,12 @@ function GetInTouch({ profileDetails}) {
         <span className="userName">{profileDetails.fullName}</span>
 
         <span className="input-typing">
-        <Typed
-                strings={arrayOfList}
-                typeSpeed={140}
-                backSpeed={50}
-                loop
-              />
+          <Typed
+            strings={arrayOfList}
+            typeSpeed={140}
+            backSpeed={50}
+            loop
+          />
         </span>
       </div>
       <div className="form-page">
@@ -140,20 +146,25 @@ function GetInTouch({ profileDetails}) {
           <div className="form-box">
             <div className="individual-input">
               <label>Name</label>
-              <input type="text" placeholder="Enter your Name" value={clientName} onChange={(e)=>setClientName(e.target.value)}/>
+              <input type="text" placeholder="Enter your Name" value={clientName} onChange={(e) => setClientName(e.target.value)} />
             </div>
             <div className="individual-input">
               <label>Email:</label>
-              <input type="email" placeholder="Enter your Email" value={clientEmail} onChange={(e)=>setClientEmail(e.target.value)}/>
+              <input type="email" placeholder="Enter your Email" value={clientEmail} onChange={(e) => setClientEmail(e.target.value)} />
             </div>
             <div className="individual-input">
               <label>Phone Number:</label>
-              <input type="tel" placeholder="Enter your phone number" value={clientPhoneNumber} onChange={(e)=>setClientPhoneNumber(e.target.value)}/>
+              <input type="tel" placeholder="Enter your phone number" value={clientPhoneNumber} onChange={(e) => setClientPhoneNumber(e.target.value)} />
             </div>
             <div className="individual-input">
               <label>Message:</label>
-              <textarea placeholder="Enter your Message...." value={clientMessage} onChange={(e)=>setClientMessage(e.target.value)}/>
+              <textarea placeholder="Enter your Message...." value={clientMessage} onChange={(e) => setClientMessage(e.target.value)} />
             </div>
+            {showMessage && (
+              <div className="individual-input-1">
+                <span>Mail sent successfully! Check your inbox.</span>
+              </div>
+            )}
             <div className="individual-btn">
               <button onClick={handleProjectDetails}>Submit</button>
             </div>

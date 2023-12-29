@@ -88,7 +88,7 @@ function Intro({ profileDetails }) {
         <motion.div className='download-resume' initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", duration: 5 }}>
-          <a href='https://portfolio-ks.s3.ap-south-1.amazonaws.com/SRINIVAS+Resume.pdf' target='_blank'>
+          <a href={profileDetails.resume} target='_blank'>
 
             <button ><img src={`${ASSETS_URL}download-resume.png`} />Resume</button>
           </a>

@@ -109,12 +109,24 @@ function PortifolioSecond({profileDetails}) {
   return (
     <div className='main-div'>
       <div className='profile-details'>
+      <div className='stars'>
+                <div className='star-1'>
+                  <img src={`${ASSETS_URL}star-logo.svg`}/>
+                </div>
+                <div className='star-2'>
+                <img src={`${ASSETS_URL}star-logo.svg`}/>
+                <img src={`${ASSETS_URL}star-logo.svg`}/>
+                </div>
+                <div className='star-3'>
+                <img src={`${ASSETS_URL}star-logo.svg`}/>
+                </div>
+              </div>
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ type: "spring", duration: 5 }}
           className='profile-details1'>
-
+             
           <div className='photo-details'>
             <div className='only-details'>
               <span>Hi,  I'M</span>
