@@ -1,28 +1,34 @@
 import React, { useState } from 'react';
 import FlipCard from 'reactjs-flip-card';
-import userLogo from '../../assets/user-profile.png';
+import { motion } from 'framer-motion'
+import { ASSETS_URL } from '../../Constant';
 import './PortifolioSecond.css';
-import introLogo from '../../assets/intrologo.png'
-import skillsLogo from '../../assets/skillslogo.png'
-import educationLogo from '../../assets/educationlogo.png'
-import experienceLogo from '../../assets/worklogo.png'
-import projectLogo from '../../assets/projectslogo.png'
-import contactLogo from '../../assets/contactlogo.png'
-import tapToView from '../../assets/taptoview.png'
 import { useNavigate } from 'react-router-dom';
+import Typed from 'react-typed';
 
-function PortifolioSecond() {
+function PortifolioSecond({profileDetails}) {
+  console.log(profileDetails)
   const [isFlipped, setIsFlipped] = useState(false);
 
   const navigate = useNavigate()
+
+  const arrayOfList = [
+    'Frontend Developer',
+    'Backend Developer',
+    'FullStack Web Developer',
+    'Reactjs Developer',
+    'MERN Stack Developer'
+
+  ]
+
   const cardData = [
     {
       front: 'Introduction',
       view: 'Introduction',
       frontColor: '#fff560',
       backColor: '#fff895',
-      frontLogo: introLogo,
-      backLogo: tapToView,
+      frontLogo: `${ASSETS_URL}intrologo.png`,
+      backLogo: `${ASSETS_URL}taptoview.png`,
       navigateTo: '/intro'
     },
     {
@@ -30,8 +36,8 @@ function PortifolioSecond() {
       view: 'Skills',
       frontColor: '#ffac7f ',
       backColor: '#ffcfa3',
-      frontLogo: skillsLogo,
-      backLogo: tapToView,
+      frontLogo: `${ASSETS_URL}skillslogo.png`,
+      backLogo: `${ASSETS_URL}taptoview.png`,
       navigateTo: '/skills'
     },
     {
@@ -39,8 +45,8 @@ function PortifolioSecond() {
       view: 'Education',
       frontColor: '#7ad7f0 ',
       backColor: '#b7e9f7',
-      frontLogo: educationLogo,
-      backLogo: tapToView,
+      frontLogo: `${ASSETS_URL}educationlogo.png`,
+      backLogo: `${ASSETS_URL}taptoview.png`,
       navigateTo: '/education'
     },
     {
@@ -48,8 +54,8 @@ function PortifolioSecond() {
       view: 'Projects',
       frontColor: '#ff3333',
       backColor: '#ff6666',
-      frontLogo: projectLogo,
-      backLogo: tapToView,
+      frontLogo: `${ASSETS_URL}projectslogo.png`,
+      backLogo: `${ASSETS_URL}taptoview.png`,
       navigateTo: '/projects'
     },
     {
@@ -57,8 +63,8 @@ function PortifolioSecond() {
       view: 'Experience',
       frontColor: '#af7fcd',
       backColor: '#c39fd9',
-      frontLogo: experienceLogo,
-      backLogo: tapToView,
+      frontLogo: `${ASSETS_URL}worklogo.png`,
+      backLogo: `${ASSETS_URL}taptoview.png`,
       navigateTo: '/experience'
     },
     {
@@ -66,8 +72,8 @@ function PortifolioSecond() {
       view: 'Contact',
       frontColor: '#39e75f',
       backColor: '#83f28f',
-      frontLogo: contactLogo,
-      backLogo: tapToView,
+      frontLogo: `${ASSETS_URL}contactlogo.png`,
+      backLogo: `${ASSETS_URL}taptoview.png`,
       navigateTo: '/contact'
     },
     // Add more cards as needed
@@ -79,16 +85,65 @@ function PortifolioSecond() {
   const handleNavigate = (item) => {
     navigate(item)
   }
+
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemFrame = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  };
+
   return (
     <div className='main-div'>
       <div className='profile-details'>
-        <img src={userLogo} alt="logo" />
-        <span className='firstname'>Srinivas <span className='lastName'>Muchu</span></span>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ type: "spring", duration: 5 }}
+          className='profile-details1'>
+
+          <div className='photo-details'>
+            <div className='only-details'>
+              <span>Hi,  I'M</span>
+              <span className='firstname'>{profileDetails.fullName} </span>
+              <span className='typing-home'>
+                 <Typed
+                strings={arrayOfList}
+                typeSpeed={140}
+                backSpeed={50}
+                loop
+              />
+              </span>
+            </div>
+            <img src={profileDetails.photo} alt="logo" />
+          </div>
+          <div className='portifolio-desc'>
+            <span>This is my Portifolio</span>
+          </div>
+
+        </motion.div>
       </div>
 
-      <div className='flipping-cards'>
+
+      <motion.div className='flipping-cards'
+       variants={container}
+       initial="hidden"
+       animate="visible">
         {cardData.map((item, index) => (
-          <div key={index} className={`flip-card ${isFlipped ? 'flipped' : ''}`} onClick={handleFlip}>
+          <motion.div key={index} variants={itemFrame} className={`flip-card ${isFlipped ? 'flipped' : ''}`} onClick={handleFlip}>
             <div className="flip-card-inner">
               <div className="flip-card-front" style={{ background: item.frontColor }}>
                 <img src={item.frontLogo} style={{ width: '50px', height: '50px' }} />
@@ -104,9 +159,9 @@ function PortifolioSecond() {
 
 
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

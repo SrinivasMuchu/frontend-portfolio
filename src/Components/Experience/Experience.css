@@ -1,0 +1,303 @@
+.exp-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 35px;
+    /* height: 70vh; */
+    border-bottom: 1px solid blue;
+    overflow-y: scroll;
+    height: 70vh;
+    box-sizing: border-box;
+    background-image: url('https://marathon-web-assets.s3.ap-south-1.amazonaws.com/org-background.svg');
+}
+
+.experience-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    /* margin-top: 50px; */
+}
+
+.ver-div {
+
+    width: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.ver-line {
+    border: 2px solid grey;
+    height: 30vh;
+    /* position: relative; */
+}
+
+.even-items,
+.odd-items {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    position: relative;
+
+    /* justify-content: flex-end; */
+}
+
+.experience-item {
+    display: flex;
+    /* align-items: center; */
+    justify-content: flex-end;
+    align-items: start;
+    gap: 30px;
+}
+
+.experience-item-even {
+    display: flex;
+
+    justify-content: flex-start;
+    align-items: start;
+    gap: 30px;
+}
+
+.details-outline,
+.even-details-outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    /* margin-left: 30px; */
+    width: 475px;
+    height: 150px;
+
+
+}
+
+.even-details-outline {
+    margin-right: 30px;
+}
+
+.even-details-tri,
+.details-tri {
+    display: flex;
+    align-items: flex-start;
+    /* margin-right: 30px; */
+    background-color: white;
+}
+
+.details-outline {
+    margin-left: 30px;
+}
+
+.details-container,
+.odd-details-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 450px;
+    /* height: 125px; */
+    border-radius: 15px 0px 15px 15px;
+    text-align: left;
+    border: 1px solid black;
+    transition: margin 0.6s ease;
+}
+
+.details-container:hover,
+.odd-details-container:hover {
+    cursor: pointer;
+    margin-bottom: 25px;
+    /* width: 470px; 
+    height: 145px; */
+    /* Adjust the desired height on hover */
+}
+
+.odd-details-container {
+    border-radius: 0px 15px 15px 15px;
+}
+
+.photo-container-right,
+.photo-container-left {
+    background-color: white;
+    position: absolute;
+    padding: 5px;
+    border: 1px solid rgb(151, 149, 149);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.photo-container-right {
+    right: -54px;
+
+}
+
+.photo-container-left {
+    left: -54px;
+}
+
+.photo-container-right img,
+.photo-container-left img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* border: 1px solid black; */
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid rgb(0, 0, 255);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    background-color: white;
+}
+
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-right: 10px solid rgb(0, 0, 255);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    background-color: white;
+}
+
+.experience-name {
+    /* display: flex; */
+    text-align: center;
+    color: blue;
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.experience-dates {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.company-location {
+    text-align: right;
+    padding-right: 25px;
+}
+
+.experience-description {
+    word-wrap: break-word;
+}
+
+.experience-mobile {
+    display: none;
+}
+
+.exp-role-text{
+   font-weight: 600;
+}
+.exp-addr{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+@media screen and (max-width: 1050px) {
+   
+
+    .experience-list {
+        display: none;
+    }
+
+    .experience-item-mob {
+        /* padding-top: 15vh; */
+        display: flex;
+        /* flex-direction: column; */
+        /* align-items: center; */
+        justify-content: center;
+        /* gap: 205px; */
+    }
+
+    .experience-mobile {
+        /* display: block; */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-top: 15vh;
+        /* justify-content: center; */
+        /* gap: 25px; */
+        /* border: 1px solid green; */
+    }
+
+    .exp-box {
+        border: 1px solid black;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 15px;
+        width: 90%;
+        word-wrap: break-word;
+        padding: 10px 20px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        background: white;
+    }
+
+    .comp-logo-mob {
+        width: 40vw;
+        height: 26vh;
+        border-radius: 50%;
+        /* border: 1px solid red; */
+        box-sizing: border-box;
+    }
+
+    .exp-hori-vert {
+        border: 1px solid black;
+        height: 15vh;
+    }
+
+    .exp-mob-title {
+       
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .comp-mob-loc{
+        display: flex;
+        justify-content: flex-end
+    }
+
+    
+}
+
+@media screen and (max-width: 750px){
+    .experience-mobile{
+        padding-top: 125vh;
+    }
+        .exp-box{
+            /* margin-top: vh; */
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            align-items: center;
+            justify-content: center;
+            /* padding-top: 100vh; */
+        }
+        .exp-hori-vert {
+            border: 1px solid black;
+            height: 0.5px;
+            width: 50%;
+            background: black;
+        }
+    
+}
+@media screen and (max-width: 500px){
+    .experience-mobile{
+        padding-top: 150vh;
+    }
+}
+/* word-wrap: break-word; */

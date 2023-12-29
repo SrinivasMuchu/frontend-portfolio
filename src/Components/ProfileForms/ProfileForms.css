@@ -1,0 +1,54 @@
+.profile-forms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    border-bottom: 2px solid red;
+}
+.profile-inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+.profile-span-input{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    width: 50%;
+}
+.profile-span-input input{
+    padding: 5px;
+    width: 50%;
+}
+.profile-span-input textarea{
+    padding: 5px;
+    resize: none;
+    width: 50%;
+}
+.profile-buttons{
+    background: blue;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.profile-title{
+    /* border: 1px solid red; */
+    padding: 5px;
+    color: green;
+    /* background: green;
+    border-radius: 15px; */
+    font-size: 30px;
+    font-weight: 800;
+}
+.react-select{
+   
+    width: 51.5%;
+}

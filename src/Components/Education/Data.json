@@ -1,0 +1,85 @@
+{
+    "name": "Srinivas Muchu",
+    "attributes": {
+      "department": "srinivasmuchu14@gmail.com"
+    },
+    "image": "https://portfolio-ks.s3.ap-south-1.amazonaws.com/srinivas-logo.png",
+  
+    "children": [
+      {
+        "type": "school",
+        "name": "School",
+        "attributes": {
+          "department": "Nellore's Ravindra barathi"
+        },
+        "image": "https://portfolio-ks.s3.ap-south-1.amazonaws.com/nrbs-logo.png",
+        "children": [
+          {
+            "name": "Location",
+            "attributes": {
+              "department": "Vijayawada - Andhra Pradesh"
+            },
+            "image": "https://portfolio-ks.s3.ap-south-1.amazonaws.com/location-logo.png"
+          },
+          {
+            "name": "2014 - 2015",
+            "attributes": {
+              "department": "CGPA : 8.0"
+            },
+            "image": "https://portfolio-ks.s3.ap-south-1.amazonaws.com/graduate-logo.jpg"
+          }
+        ]
+      },
+      {
+        "type": "school",
+        "name": "Associate Degree",
+        "attributes": {
+          "department": "Narayana Junior College"
+        },
+        "image": "https://portfolio-ks.s3.ap-south-1.amazonaws.com/narayana-logo.png",
+        "children": [
+          {
+            "name": "Location",
+            "attributes": {
+              "department": "Vijayawada - Andhra Pradesh"
+            },
+            "image": "https://portfolio-ks.s3.ap-south-1.amazonaws.com/location-logo.png"
+          },
+          {
+            "name": "2015 - 2017",
+            "attributes": {
+              "department": "Percentage : 86.8%"
+            },
+            "image": "https://portfolio-ks.s3.ap-south-1.amazonaws.com/graduate-logo.jpg"
+          }
+        ]
+      },
+      {
+        "type": "school",
+        "name": "Bachelor's Degree",
+        "attributes": {
+          "department": "Koneru Lakshmaiah University(KLU)"
+        },
+        "image": "https://portfolio-ks.s3.ap-south-1.amazonaws.com/klu-logo.png",
+        "children": [
+          {
+            "name": "Location",
+            "attributes": {
+              "department": "Guntur - Andhra Pradesh"
+            },
+            "image": "https://portfolio-ks.s3.ap-south-1.amazonaws.com/location-logo.png"
+            
+          },
+          {
+            "name": "2017 - 2021 -  Civil Engineering",
+            "attributes": {
+              "department": "CGPA : 7.3"
+            },
+            "image": "https://portfolio-ks.s3.ap-south-1.amazonaws.com/graduate-logo.jpg"
+            
+          }
+        ]
+      }
+    ]
+  }
+  
