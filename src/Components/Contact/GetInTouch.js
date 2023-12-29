@@ -63,10 +63,10 @@ function GetInTouch({ profileDetails}) {
         }
       );
       toast.success("Thanks for reviewing my portfolio , I got your response",toastStyle);
-      // setClientEmail('')
-      // setClientMessage('')
-      // setClientName('')
-      // setClientPhoneNumber('')
+      setClientEmail('')
+      setClientMessage('')
+      setClientName('')
+      setClientPhoneNumber('')
       console.log(createProjects.data.data)
     } catch (error) {
       console.log(error);

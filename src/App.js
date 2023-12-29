@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import PortifolioFirst from './Components/Portifolio-first/PortifolioFirst';
+
 import PortifolioSecond from './Components/Portifolio-second/PortifolioSecond';
 import EducationForm from './Components/ProfileForms/EducationForm';
 import ProfileForm from './Components/ProfileForms/ProfileForm';
