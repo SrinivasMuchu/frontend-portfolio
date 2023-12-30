@@ -79,8 +79,8 @@ function App() {
           <meta property="og:title" content={`${profileDetails.fullName || 'Your Website'} - My Portfolio`} />
           <meta property="og:description" content={`Check out the portfolio of ${profileDetails.fullName}.`} />
           <meta property="og:image" content={profileDetails.photo} />
-          <meta property="og:url" content="https://www.yourportfolio.com" />
-          <meta name="og:site_name" content="Your Portfolio Site" />
+          <meta property="og:url" content="https://srinivas-portfolio.vercel.app/" />
+          <meta name="og:site_name" content="srinivas-portfolio" />
           <meta property="og:type" content="website" />
 
           {/* Twitter Card meta tags */}
