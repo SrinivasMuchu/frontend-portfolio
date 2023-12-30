@@ -162,7 +162,7 @@ function GetInTouch({ profileDetails }) {
             </div>
             {showMessage && (
               <div className="individual-input-1">
-                <span>Mail sent successfully! Check your inbox.</span>
+                <span>Mail sent successfully! Please check your inbox.</span>
               </div>
             )}
             <div className="individual-btn">

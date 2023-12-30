@@ -23,6 +23,23 @@ import { Helmet } from 'react-helmet-async';
 
 function App() {
   const [profileDetails, setProfileDetails] = useState({});
+  const [password, setPassword] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+  // const navigate = useNavigate();
+  const handleLogin = () => {
+    // Check if the entered password matches the expected password
+    const expectedPassword = '3636'; // Change this to your desired password
+    if (password === expectedPassword) {
+      // Set isAuthenticated to true
+      setIsAuthenticated(true);
+    } else {
+      window.location.assign('/');
+    }
+  };
   useEffect(() => {
     getProfileDetails();
   }, []);
@@ -95,19 +112,29 @@ function App() {
             <Route path='/experience' element={<Experience />} />
             <Route path='/contact' element={<Contact profileDetails={profileDetails} />} />
             <Route path='/get-in-touch' element={<GetInTouch profileDetails={profileDetails} />} />
-            <Route path='/forms'
-              element={<>
-                {/* <Profile />
-              <Skills />
-              <Projects />
-              <Education />
-              <WorkStatus /> */}
-                <ProfileForm />
-                {/* <EducationForm/> */}
-                <ProjectsForm />
-                <SkillsForm />
-                <WorkStatus />
-              </>} />
+            <Route
+              path='/forms'
+              element={
+                isAuthenticated ? (
+                  <>
+                    <ProfileForm />
+                    <ProjectsForm />
+                    <SkillsForm />
+                    <WorkStatus />
+                  </>
+                ) : (
+                  <div>
+                    <p>Please enter the password to access the forms:</p>
+                    <input
+                      type="password"
+                      value={password}
+                      onChange={handlePasswordChange}
+                    />
+                    <button onClick={handleLogin}>Login</button>
+                  </div>
+                )
+              }
+            />
           </Routes>
         </Router>
         {/* <PortifolioFirst/> */}

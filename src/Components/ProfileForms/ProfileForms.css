@@ -52,3 +52,11 @@
    
     width: 51.5%;
 }
+@media screen and (max-width: 600px){
+    .profile-span-input{
+        flex-direction: column;
+    }
+    .profile-span-input input,.profile-span-input textarea,.react-select{
+        width: 100%;
+    }
+}

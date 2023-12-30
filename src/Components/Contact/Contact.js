@@ -16,6 +16,8 @@ function Contact({ profileDetails }) {
       repeatType: 'reverse', // Reverse the animation on each repeat
     },
   };
+  const encodedMessage = encodeURIComponent("Hi, I'm messaging you by seeing your portfolio");
+const whatsappMessage = `https://wa.me/+91${profileDetails.phoneNumber}?text=${encodedMessage}`;
 
   // Start the animation when the component mounts
   React.useEffect(() => {
@@ -63,7 +65,7 @@ function Contact({ profileDetails }) {
       logo: `${ASSETS_URL}whatsapp-logo.png`,
       color: '#25d366',
       userName: 'srinivasmuchu',
-      link: `https://wa.me/+91${profileDetails.phoneNumber}?text=Hi%20I'm%20messaging%20you%20by%20seeing%20your%20portfolio`,
+      link: whatsappMessage,
       view: 'chat'
     },
   ];

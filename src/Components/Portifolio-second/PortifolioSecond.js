@@ -114,8 +114,8 @@ function PortifolioSecond({profileDetails}) {
                   <img src={`${ASSETS_URL}star-logo.svg`}/>
                 </div>
                 <div className='star-2'>
-                <img src={`${ASSETS_URL}star-logo.svg`}/>
-                <img src={`${ASSETS_URL}star-logo.svg`}/>
+                <img src={`${ASSETS_URL}star-logo.svg`} className='star-2-img1'/>
+                <img src={`${ASSETS_URL}star-logo.svg`} className='star-2-img2'/>
                 </div>
                 <div className='star-3'>
                 <img src={`${ASSETS_URL}star-logo.svg`}/>
