@@ -143,7 +143,7 @@ function PortifolioSecond({profileDetails}) {
             <img src={profileDetails.photo} alt="logo" />
           </div>
           <div className='portifolio-desc'>
-            <span>This is my Portifolio</span>
+            <span>This is my Portfolio</span>
           </div>
 
         </motion.div>
