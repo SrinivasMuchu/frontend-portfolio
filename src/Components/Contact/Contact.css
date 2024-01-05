@@ -1,8 +1,14 @@
 .contact-page{
   /* background-color: rgb(64, 60, 60);
+  
   color: white; */
     padding: 20px;
     box-sizing: border-box;
+    background-image: url('https://portfolio-ks.s3.ap-south-1.amazonaws.com/contact-bg.png');
+    background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+    height: 100vh;
 }
 .flex-links{
     display: flex;
@@ -28,6 +34,13 @@
 .nav-home-div{
     display: flex;
     cursor: pointer;
+    align-items: center;
+    gap: 10px;
+    /* filter: invert(1); */
+    padding: 10px;
+    font-weight: 600;
+    background: white;
+    border-radius: 15px;
 }
 .contact-me{
     font-size: Clamp(35px, 4.3vw, 70px);
@@ -67,9 +80,9 @@
     color: white;
 
 }
-.logo-circle img{
+/* .logo-circle img{
     filter: invert(1);
-}
+} */
 .link-logo{
     width: 25px;
     height: 25px;

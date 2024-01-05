@@ -30,7 +30,7 @@ const whatsappMessage = `https://wa.me/+91${profileDetails.phoneNumber}?text=${e
   const cardData = [
     {
       name: 'Email',
-      logo: `${ASSETS_URL}email-icon.png`,
+      logo: 'https://portfolio-ks.s3.ap-south-1.amazonaws.com/mail-logo-img.gif',
       color: '#d44638',
       link: profileDetails.email,
       userName: profileDetails.email,
@@ -38,7 +38,7 @@ const whatsappMessage = `https://wa.me/+91${profileDetails.phoneNumber}?text=${e
     },
     {
       name: 'Linkedin',
-      logo: `${ASSETS_URL}linkedin_icon.png`,
+      logo: 'https://portfolio-ks.s3.ap-south-1.amazonaws.com/linkedin-img-logo.gif',
       color: '#3c94e4',
       link: profileDetails.linkedin,
       userName: profileDetails.linkedinName,
@@ -46,7 +46,7 @@ const whatsappMessage = `https://wa.me/+91${profileDetails.phoneNumber}?text=${e
     },
     {
       name: 'Github',
-      logo: `${ASSETS_URL}github-icon.png`,
+      logo: 'https://portfolio-ks.s3.ap-south-1.amazonaws.com/github-cat.gif',
       color: '#999999',
       link: profileDetails.github,
       userName: profileDetails.githubName,
@@ -54,7 +54,7 @@ const whatsappMessage = `https://wa.me/+91${profileDetails.phoneNumber}?text=${e
     },
     {
       name: 'PhoneNumber',
-      logo: `${ASSETS_URL}phone-icon.png`,
+      logo: 'https://portfolio-ks.s3.ap-south-1.amazonaws.com/phone-texting.gif',
       color: '#73c3f3',
       link: profileDetails.phoneNumber,
       userName: profileDetails.phoneNumber,
@@ -62,7 +62,7 @@ const whatsappMessage = `https://wa.me/+91${profileDetails.phoneNumber}?text=${e
     },
     {
       name: 'Whatsapp',
-      logo: `${ASSETS_URL}whatsapp-logo.png`,
+      logo: 'https://portfolio-ks.s3.ap-south-1.amazonaws.com/whatsapp-chat.gif',
       color: '#25d366',
       userName: 'srinivasmuchu',
       link: whatsappMessage,
@@ -89,8 +89,9 @@ const whatsappMessage = `https://wa.me/+91${profileDetails.phoneNumber}?text=${e
     <div className='contact-page'>
       <div className='nav-to-home' >
         <div className='nav-home-div' onClick={handleNavigate}>
-          <img src={`${ASSETS_URL}leftArrow.png`} alt='' />&nbsp;&nbsp;
+          <img src={`${ASSETS_URL}leftArrow.png`} alt='' />
           <img src={`${ASSETS_URL}homeLogo.png`} alt='' />
+          <span>home</span>
         </div>
 
 

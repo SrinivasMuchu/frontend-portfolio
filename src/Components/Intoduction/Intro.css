@@ -3,8 +3,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: url('https://portfolio-ks.s3.ap-south-1.amazonaws.com/intro-bg.png');
+    background-size: cover; /* This will make the image cover the entire container, maintaining aspect ratio */
+    background-position: top;
     width: 100%;
-    height: 70vh;
+    height: 72.5vh;
     gap: 15px;
   border-bottom: 1px solid blue;
   
@@ -68,6 +71,13 @@
     justify-content: center;
     align-items: center;
     padding-top: 20px;
+    padding-bottom: 20px;
+    /* background-image: url('https://img.lovepik.com/background/20211021/large/lovepik-summer-cool-water-background-image_400188327.jpg'); */
+    background-size: cover; /* This will make the image cover the entire container, maintaining aspect ratio */
+    background-position: center; /* Center the image */
+    /* height: 100vh;  */
+    /* margin: 0; */
+
 }
 
 .intro-flip-card {
@@ -99,6 +109,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+   
     /* gap: 10px; */
     backface-visibility: hidden;
     border-radius: 50%;

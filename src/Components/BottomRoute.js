@@ -12,7 +12,7 @@ function BottomRoute({ data }) {
     }
 
 
-
+// https://portfolio-ks.s3.ap-south-1.amazonaws.com/water-gif.gif
 
     const handleFlip = () => {
         setIsFlipped(!isFlipped);
@@ -21,7 +21,7 @@ function BottomRoute({ data }) {
         <motion.div initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ type: "spring", duration: 5 }}>
-            <div className='intro-flipping-cards' style={{ background: 'white' }} >
+            <div className='intro-flipping-cards'  >
                 {data.map((item, index) => (
                     <div key={index} className={`intro-flip-card ${isFlipped ? 'flipped' : ''}`} onClick={handleFlip}>
 

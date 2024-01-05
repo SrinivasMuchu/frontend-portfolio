@@ -83,6 +83,7 @@
   box-sizing: border-box;
   
 }
+
 .star-1,.star-3{
   width: 20%;
  display: flex;
@@ -101,7 +102,10 @@
   height: 25px; /* Set the initial height of the star images */
   transition: all 0.3s ease; /* Add a smooth transition effect */
 }
-
+.hi-emoji{
+  width: 150px;
+  height: 50px;
+}
 .star-1:hover img,.star-3:hover img,.star-2-img1:hover,.star-2-img2:hover {
   cursor: pointer;
   transform: scale(1.5); /* Increase the size on hover */
