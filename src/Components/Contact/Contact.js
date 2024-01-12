@@ -3,6 +3,7 @@ import { ASSETS_URL } from '../../Constant';
 import { useNavigate } from 'react-router-dom';
 import { motion, useAnimation } from 'framer-motion';
 import './Contact.css'
+// import ToggleDarkMode from '../ToggleDarkMode/ToggleDarkMode';
 // `${ASSETS_URL}homeLogo.png`
 
 function Contact({ profileDetails }) {
@@ -92,8 +93,9 @@ const whatsappMessage = `https://wa.me/+91${profileDetails.phoneNumber}?text=${e
           <img src={`${ASSETS_URL}leftArrow.png`} alt='' />
           <img src={`${ASSETS_URL}homeLogo.png`} alt='' />
           <span>home</span>
+         
         </div>
-
+     
 
       </div>
       <motion.div className='contact-me' initial={{ opacity: 0, x: -50 }}

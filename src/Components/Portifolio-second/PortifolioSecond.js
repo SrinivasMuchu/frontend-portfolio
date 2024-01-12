@@ -5,6 +5,7 @@ import { ASSETS_URL } from '../../Constant';
 import './PortifolioSecond.css';
 import { useNavigate } from 'react-router-dom';
 import Typed from 'react-typed';
+import ToggleDarkMode from '../ToggleDarkMode/ToggleDarkMode';
 
 function PortifolioSecond({profileDetails}) {
   console.log(profileDetails)
@@ -120,6 +121,7 @@ function PortifolioSecond({profileDetails}) {
                 <div className='star-3'>
                 <img src={`${ASSETS_URL}star-logo.svg`}/>
                 </div>
+                {/* <ToggleDarkMode/> */}
               </div>
         <motion.div
           initial={{ opacity: 0, x: -50 }}

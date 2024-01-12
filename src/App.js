@@ -20,11 +20,15 @@ import Experience from './Components/Experience/Experience';
 import Projects from './Components/Projects/Projects';
 import { HelmetProvider } from 'react-helmet-async'; // Import HelmetProvider
 import { Helmet } from 'react-helmet-async';
+import Loading from './Components/Loading/Loading';
+import { useTheme } from './ThemeContext';
+import ToggleDarkMode from './Components/ToggleDarkMode/ToggleDarkMode';
 
 function App() {
   const [profileDetails, setProfileDetails] = useState({});
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { darkMode } = useTheme();
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
@@ -67,7 +71,7 @@ function App() {
   };
   return (
     <HelmetProvider>
-      <div className="App">
+      <div className={darkMode ? 'dark-mode' : 'light-mode'}>
       <Helmet>
           <link rel="icon" href="/custom-favicon.ico" />
           <title>{`${profileDetails.fullName || 'Your Website'} - My Portfolio`}</title>
@@ -103,6 +107,7 @@ function App() {
           <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         </Helmet>
         <Router>
+          {/* <ToggleDarkMode/> */}
           <Routes>
             <Route path='/' element={<PortifolioSecond profileDetails={profileDetails} />} />
             <Route path='/intro' element={<Intro profileDetails={profileDetails} />} />
@@ -110,6 +115,7 @@ function App() {
             <Route path='/education' element={<Education profileDetails={profileDetails} />} />
             <Route path='/projects' element={<Projects />} />
             <Route path='/experience' element={<Experience />} />
+            <Route path='/loading' element={<Loading />} />
             <Route path='/contact' element={<Contact profileDetails={profileDetails} />} />
             <Route path='/get-in-touch' element={<GetInTouch profileDetails={profileDetails} />} />
             <Route

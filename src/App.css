@@ -1,4 +1,14 @@
-body{
+body {
     padding: 0px;
     margin: 0px;
+}
+
+.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
 }

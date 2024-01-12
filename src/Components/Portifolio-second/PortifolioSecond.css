@@ -1,6 +1,7 @@
 .main-div {
   /* background: rgb(0, 0, 0); */
   background-image: url('https://portfolio-ks.s3.ap-south-1.amazonaws.com/background-image-galaxy.gif');
+  /* background-image: url('https://i.pinimg.com/originals/f6/32/b0/f632b07f8ab9b2a0ccf77998c766064b.gif'); */
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -9,6 +10,9 @@
   justify-content: space-between;
   box-sizing: border-box;
   overflow-y: scroll;
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  /* background-size: cover; */
 
 }
 
@@ -25,7 +29,7 @@
   font-size: Clamp(20px, 2.7vw, 40px);
   font-weight: 600;
   width: 50%;
-  border: 2px solid rgb(0, 0, 0);
+  /* border: 2px solid rgb(0, 0, 0); */
 
   /* height: auto; */
 
@@ -254,6 +258,10 @@
     display: flex;
     flex-direction: column;
 
+  }
+  .firstname{
+    -webkit-text-stroke: 0px rgb(255, 255, 255);
+    text-shadow: 0px 0px;
   }
 }
 
