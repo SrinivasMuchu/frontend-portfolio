@@ -90,7 +90,7 @@ function Intro({ profileDetails }) {
           transition={{ type: "spring", duration: 5 }}>
           <a href={profileDetails.resume} target='_blank'>
 
-            <button ><img src={`${ASSETS_URL}download-resume.png`} />Resume</button>
+            <button ><img src={`${ASSETS_URL}download-resume.png`} alt=''/>Resume</button>
           </a>
 
         </motion.div>
