@@ -325,6 +325,7 @@ function AboutSkills() {
                       src={droppedItem.skillPhoto}
                       width="40px"
                       height="40px"
+                        alt=''
                     />
                     {/* <span>{droppedItem.name}</span> */}
                   </div>
