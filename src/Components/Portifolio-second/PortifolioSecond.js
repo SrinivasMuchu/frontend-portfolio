@@ -112,14 +112,14 @@ function PortifolioSecond({profileDetails}) {
       <div className='profile-details'>
       <div className='stars'>
                 <div className='star-1'>
-                  <img src={`${ASSETS_URL}star-logo.svg`}/>
+                  <img src={`${ASSETS_URL}star-logo.svg`} alt=''/>
                 </div>
                 <div className='star-2'>
-                <img src={`${ASSETS_URL}star-logo.svg`} className='star-2-img1'/>
-                <img src={`${ASSETS_URL}star-logo.svg`} className='star-2-img2'/>
+                <img src={`${ASSETS_URL}star-logo.svg`} className='star-2-img1' alt=''/>
+                <img src={`${ASSETS_URL}star-logo.svg`} className='star-2-img2' alt=''/>
                 </div>
                 <div className='star-3'>
-                <img src={`${ASSETS_URL}star-logo.svg`}/>
+                <img src={`${ASSETS_URL}star-logo.svg`} alt=''/>
                 </div>
                 {/* <ToggleDarkMode/> */}
               </div>
@@ -160,13 +160,13 @@ function PortifolioSecond({profileDetails}) {
           <motion.div key={index} variants={itemFrame} className={`flip-card ${isFlipped ? 'flipped' : ''}`} onClick={handleFlip}>
             <div className="flip-card-inner">
               <div className="flip-card-front" style={{ background: item.frontColor }}>
-                <img src={item.frontLogo} style={{ width: '50px', height: '50px' }} />
+                <img src={item.frontLogo} style={{ width: '50px', height: '50px' }} alt=''/>
                 <h2>{item.front}</h2>
               </div>
 
               <div className="flip-card-back" style={{ background: item.backColor }} onClick={() => handleNavigate(item.navigateTo)}>
 
-                <img src={item.backLogo} style={{ width: '50px', height: '50px' }} />
+                <img src={item.backLogo} style={{ width: '50px', height: '50px' }} alt=''/>
                 <h2>Click to view my {item.view}</h2>
 
               </div>
