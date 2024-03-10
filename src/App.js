@@ -28,6 +28,7 @@ function App() {
   const [profileDetails, setProfileDetails] = useState({});
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { darkMode } = useTheme();
 
   const handlePasswordChange = (e) => {
@@ -50,6 +51,7 @@ function App() {
 
   const getProfileDetails = async () => {
     try {
+      setLoading(true)
       const profileDetails = await axios.get(
         BASE_URL + "/user/get-person-details"
       );
@@ -57,7 +59,7 @@ function App() {
       updateFavicon(profileDetails.data.data.user_details.photo);
 
       // document.title = profileDetails.data.data.user_details.fullName;
-
+      setLoading(false)
     } catch (error) {
       console.log(error);
     }
@@ -72,7 +74,7 @@ function App() {
   return (
     <HelmetProvider>
       <div className={darkMode ? 'dark-mode' : 'light-mode'}>
-      <Helmet>
+        <Helmet>
           <link rel="icon" href="/custom-favicon.ico" />
           <title>{`${profileDetails.fullName || 'Your Website'} - My Portfolio`}</title>
           <meta name="keywords" content="portfolio, react, web development,srinivas muchu,srinivas muchu portifolio" />
@@ -101,12 +103,13 @@ function App() {
           <link rel="apple-touch-icon" href={profileDetails.photo} />
 
           {/* Favicon */}
-          <link rel="icon" href={profileDetails.photo } />
+          <link rel="icon" href={profileDetails.photo} />
 
           {/* Manifest file for Progressive Web App (PWA) */}
           <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         </Helmet>
-        <Router>
+        <>
+        {loading ? <Loading/> :    <Router>
           {/* <ToggleDarkMode/> */}
           <Routes>
             <Route path='/' element={<PortifolioSecond profileDetails={profileDetails} />} />
@@ -142,7 +145,10 @@ function App() {
               }
             />
           </Routes>
-        </Router>
+        </Router>}
+     
+        </>
+      
         {/* <PortifolioFirst/> */}
         {/* <PortifolioSecond /> */}
         {/* <Profile/>
