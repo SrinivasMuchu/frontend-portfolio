@@ -77,7 +77,8 @@ function App() {
       <div className={darkMode ? 'dark-mode' : 'light-mode'}>
         <Helmet>
           <link rel="icon" href="/custom-favicon.ico" />
-          <meta name="google-site-verification" content="google45ca734517436249.html" />
+          {/* <meta name="google-site-verification" content="google45ca734517436249.html" /> */}
+          <meta name="google-site-verification" content="U2AfPx3VHAgZ5piqeGs52mkP44vEPDAmwd8bt0R7aHY" />
           <title>{`${profileDetails.fullName || 'Your Website'} - My Portfolio`}</title>
           <meta name="keywords" content="portfolio, react, web development,srinivas muchu,srinivas muchu portifolio" />
           <meta name="author" content="Srinivas Muchu" />
