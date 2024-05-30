@@ -24,6 +24,7 @@ import Loading from './Components/Loading/Loading';
 import { useTheme } from './ThemeContext';
 import ToggleDarkMode from './Components/ToggleDarkMode/ToggleDarkMode';
 
+
 function App() {
   const [profileDetails, setProfileDetails] = useState({});
   const [password, setPassword] = useState('');
@@ -76,6 +77,7 @@ function App() {
       <div className={darkMode ? 'dark-mode' : 'light-mode'}>
         <Helmet>
           <link rel="icon" href="/custom-favicon.ico" />
+          <meta name="google-site-verification" content="google45ca734517436249.html" />
           <title>{`${profileDetails.fullName || 'Your Website'} - My Portfolio`}</title>
           <meta name="keywords" content="portfolio, react, web development,srinivas muchu,srinivas muchu portifolio" />
           <meta name="author" content="Srinivas Muchu" />
@@ -85,7 +87,8 @@ function App() {
           <meta property="og:title" content={`${profileDetails.fullName || 'Your Website'} - My Portfolio`} />
           <meta property="og:description" content={`Check out the portfolio of ${profileDetails.fullName}.`} />
           <meta property="og:image" content={profileDetails.photo} />
-          <meta property="og:url" content="https://srinivas-portfolio.vercel.app/" />
+          {/* <meta property="og:url" content="https://srinivas-portfolio.vercel.app/" /> */}
+          <meta property="og:url" content="https://www.srinivasmuchu.site/" />
           <meta name="og:site_name" content="srinivas-portfolio" />
           <meta property="og:type" content="website" />
 
@@ -120,6 +123,7 @@ function App() {
             <Route path='/experience' element={<Experience />} />
             <Route path='/loading' element={<Loading />} />
             <Route path='/contact' element={<Contact profileDetails={profileDetails} />} />
+           
             <Route path='/get-in-touch' element={<GetInTouch profileDetails={profileDetails} />} />
             <Route
               path='/forms'
