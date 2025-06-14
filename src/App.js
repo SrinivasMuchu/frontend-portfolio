@@ -79,8 +79,8 @@ function App() {
           <link rel="icon" href="/custom-favicon.ico" />
           {/* <meta name="google-site-verification" content="google45ca734517436249.html" /> */}
           <meta name="google-site-verification" content="U2AfPx3VHAgZ5piqeGs52mkP44vEPDAmwd8bt0R7aHY" />
-          <title>{`${profileDetails.fullName || 'Your Website'} - My Portfolio`}</title>
-          <meta name="keywords" content="portfolio, react, web development,srinivas muchu,srinivas muchu portfolio" />
+          <title>{`${profileDetails.fullName || 'Your Website'} - Frontend Developer | Portfolio`}</title>
+          <meta name="description" content={`Portfolio website of ${profileDetails.fullName || 'a passionate web developer'} showcasing skills, projects, education, and experience in frontend development and UI design.`} />
           <meta name="author" content="Srinivas Muchu" />
           <meta name="robots" content="index, follow" />
 
@@ -122,7 +122,7 @@ function App() {
             `}
           </script>
         </Helmet>
-        <>
+        <main>
         {loading ? <Loading/> :    <Router>
           {/* <ToggleDarkMode/> */}
           <Routes>
@@ -162,15 +162,7 @@ function App() {
           </Routes>
         </Router>}
      
-        </>
-      
-        {/* <PortifolioFirst/> */}
-        {/* <PortifolioSecond /> */}
-        {/* <Profile/>
-    <Skills/>
-    <Projects/>
-    <Education/>
-    <WorkStatus/> */}
+        </main>
       </div>
     </HelmetProvider>
   );

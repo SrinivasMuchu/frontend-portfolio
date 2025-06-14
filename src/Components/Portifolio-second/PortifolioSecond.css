@@ -1,334 +1,195 @@
 .main-div {
-  /* background: rgb(0, 0, 0); */
-  background-image: url('https://portfolio-ks.s3.ap-south-1.amazonaws.com/background-image-galaxy.gif');
-  /* background-image: url('https://i.pinimg.com/originals/f6/32/b0/f632b07f8ab9b2a0ccf77998c766064b.gif'); */
   min-height: 100vh;
   width: 100%;
+  background: linear-gradient(90deg, #f8e1f4 0%, #e3e8fd 100%);
   display: flex;
-  /* flex-direction: column; */
-  /* padding-top: 15px; */
+  flex-direction: column;
+  align-items: center;
+  /* padding-bottom: 40px; */
+}
+
+.profile-section {
+  display: flex;
   justify-content: space-between;
-  box-sizing: border-box;
-  overflow-y: scroll;
-  /* background-repeat: no-repeat; */
-  /* background-position: center; */
-  /* background-size: cover; */
-
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1200px;
+  padding: 0px 0px 0px 0px;
+  background: transparent;
 }
 
-.profile-details {
+.profile-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* align-items: center; */
-
-  /* justify-content: end; */
-  /* padding: 10px ;
-    padding-right: 50px; */
-  font-size: Clamp(20px, 2.7vw, 40px);
-  font-weight: 600;
-  width: 50%;
-  /* border: 2px solid rgb(0, 0, 0); */
-
-  /* height: auto; */
-
+  align-items: flex-start;
+  flex: 1;
+  gap: 16px;
+  margin-top: 20px;
 }
 
-.profile-details1 {
-  /* margin-left: 25px; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-  justify-content: center;
-  /* border: 2px solid rgb(0, 255, 251); */
-  border-radius: 50px 5px;
-  box-sizing: border-box;
-  padding: 15px;
-  color: white;
-  width: 100%;
-  height: 75vh;
+.greeting {
+  font-size: 1.2rem;
+  color: #7c2ae8;
+  font-weight: 500;
 }
 
-.photo-details {
-  display: flex;
-  /* flex-direction: column; */
-  color: white;
-  align-items: center;
-  gap: 15px;
-  /* justify-content: space-between; */
-  width: 100%;
-}
-
-.firstname {
+.profile-name {
+  font-size: 2.8rem;
   font-weight: 800;
-
-  /* font-size: 160px; */
-  -webkit-text-stroke: 0.01px rgb(255, 255, 255);
-  /* -webkit-font-smoothing: antialiased */
+  color: #7c2ae8;
+  margin: 0;
+  line-height: 1.1;
 }
 
-.typing-home {
-  font-size: Clamp(15px, 1.7vw, 25px);
+.profile-role {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0.2em 0 0.1em 0;
 }
-.stars{
-  /* margin-right: 250px; */
-  /* padding-bottom: 250px; */
+
+.profile-desc {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.2em;
+}
+
+.profile-buttons1 {
   display: flex;
-  /* gap: 10px; */
-  flex-direction: column;
-  /* align-items: center;
-  justify-content: flex-start; */
-  /* border: 1px solid red; */
-  width: 100%;
-  padding-left: 20px;
-  /* margin-bottom: 150px; */
-  box-sizing: border-box;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 0.7em 1.7em;
+  border-radius: 2em;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(124,42,232,0.08);
+}
+
+.btn-primary {
+  background: #7c2ae8;
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 16px rgba(124,42,232,0.13);
+}
+
+.btn-primary:hover {
+  background: #a259e6;
+}
+
+.btn-outline {
+  background: #fff;
+  color: #7c2ae8;
+  border: 2px solid #7c2ae8;
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: #f3eaff;
+}
+
+.profile-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
   
 }
 
-.star-1,.star-3{
-  width: 20%;
- display: flex;
- justify-content: center;
- 
-}
-
-.star-2{
-  display: flex;
-  justify-content: center;
-  justify-content: space-between;
-  width: 20%;
-}
-.stars img {
-  width: 25px; /* Set the initial width of the star images */
-  height: 25px; /* Set the initial height of the star images */
-  transition: all 0.3s ease; /* Add a smooth transition effect */
-}
-.hi-emoji{
-  width: 150px;
-  height: 50px;
-}
-.star-1:hover img,.star-3:hover img,.star-2-img1:hover,.star-2-img2:hover {
-  cursor: pointer;
-  transform: scale(1.5); /* Increase the size on hover */
-}
-.only-details {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  gap: 20px;
-  width: 50%;
-}
-
-.photo-details img {
+.profile-image {
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  border: 1px solid black;
-  width: 250px;
-  height: 250px;
-  /* filter: invert(1); */
+  border: 4px solid #e5d6fa;
+  object-fit: cover;
+  box-shadow: 0 4px 24px rgba(124,42,232,0.10);
+  background: #e5e9f7;
 }
 
-.firstname {
-  color: #0011ff;
-  text-shadow: 3px 3px;
-}
-
-.lastname {
-  color: #722f39;
-}
-
-.flipping-cards {
+.cards-grid {
+  width: 100% !important;
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
   justify-content: center;
-  align-items: center;
-  padding-top: 50px;
-  width: 75%;
-  height: 92vh;
-
+  gap: 32px;
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto 0 auto;
 }
 
-.flip-card {
-  width: 22vw;
-  height: 150px;
-  perspective: 1000px;
-  cursor: pointer;
-  border-radius: 10px;
-}
-
-.flip-card-inner {
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-  transform: rotateY(0deg);
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  width: 100%;
-  height: 100%;
-  position: absolute;
+.static-card {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 2px 16px rgba(124,42,232,0.07);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  backface-visibility: hidden;
-  border-radius: 40px;
-  font-size: 20px;
-  box-sizing: border-box;
-  /* border: 3px solid transparent; */
-  border-radius: 50px 5px;
-  /* border-image: linear-gradient(45deg, #ffffff, #ff00c8) 1;
-    animation: border 2s linear infinite; */
-  padding: 5px;
-  /* transition: border-color 1s linear;
-    box-shadow: rgba(125, 125, 182, 0.25) 0px 13px 27px -5px, rgba(255, 255, 255, 0.3) 0px 8px 16px -8px; */
+  justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  border: 2px solid transparent;
+  width: 250px;
 }
 
-.flip-card-back {
-  font-size: 15px;
+.static-card:hover {
+  transform: translateY(-7px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(124,42,232,0.13);
+  border: 2px solid #a259e6;
 }
 
-.flip-card-front {
-  background-color: #3498db;
+.card-emoji {
+  font-size: 2.2rem;
+  margin-bottom: 0.5em;
 }
 
-.flip-card-back {
-  background-color: #e74c3c;
-  transform: rotateY(180deg);
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2d1b4e;
 }
 
-/* @keyframes border {
-    0% {
-      border-image: linear-gradient(45deg, #ffffff, #ff00a6) 1;
-    }
-    25% {
-      border-image: linear-gradient(45deg, #ff0040, #ffffff) 1;
-    }
-    50% {
-      border-image: linear-gradient(45deg, #ff00a6, #ff0040) 1;
-    }
-    75% {
-      border-image: linear-gradient(45deg, #ffffff, #ff00a6) 1;
-    }
-    100% {
-      border-image: linear-gradient(45deg, #ff0040, #ffffff) 1;
-    }
-  } */
-@media screen and (max-width: 1020px) {
-  .main-div {
-    padding-top: 150px;
-    display: flex;
+@media (max-width: 900px) {
+  .profile-section {
     flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    align-items: center;
-    justify-content: space-around;
-
+    align-items: flex-start;
+    gap: 32px;
+    padding: 30px 10px 20px 10px;
   }
-
-  .profile-details {
-    width: 99%;
-
+  .profile-image-container {
+    align-self: center;
+    margin-left: 0;
+    margin-top: 20px;
   }
-
-  .profile-details1 {
-    width: 80%;
-    display: flex;
-    align-items: center;
-    /* justify-content: space-between; */
-
-  }
-
-  .flipping-cards {
-    width: 100%;
+  .cards-grid {
+   
+    
+    gap: 22px;
   }
 }
 
-@media screen and (max-width: 550px) {
-  .photo-details {
-    display: flex;
-    flex-direction: column;
-
+@media (max-width: 600px) {
+  .profile-section {
+    padding: 18px 2vw 10px 2vw;
+    margin: 18px auto 10px auto;
   }
-  .firstname{
-    -webkit-text-stroke: 0px rgb(255, 255, 255);
-    text-shadow: 0px 0px;
+  .profile-name {
+    font-size: 2rem;
   }
-}
+  
+  .cards-grid {
 
-@media screen and (max-width: 1000px) {
-  .flipping-cards {
-
-    display: flex;
-    flex-wrap: wrap;
-    /* flex-direction: column; */
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-
+    gap: 16px;
   }
-
-  .flip-card-front,
-  .flip-card-back {
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 10px;
-  }
-
-  .flip-card {
-    width: 50vw;
-    height: 150px;
-    perspective: 1000px;
-    cursor: pointer;
-    border-radius: 10px;
-  }
-
-  .flip-card-inner {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-    transform: rotateY(0deg);
-  }
-
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-}
-
-@media screen and (max-width: 1020px) {
-  .only-details {
-    width: 100%;
-  }
-}
-.main-div::-webkit-scrollbar {
-  width: 0;  /* Set the width to 0 to hide the scrollbar */
-}
-
-/* Optional: You can style the track and handle if needed */
-.main-div::-webkit-scrollbar-track {
-  background-color: transparent;  /* Track color (optional) */
-}
-
-.main-div::-webkit-scrollbar-thumb {
-  background-color: transparent;  /* Scrollbar handle color (optional) */
-}
-
-@media screen and (max-width: 300px){
-  .photo-details img{
-    width: 200px;
-    height: 200px;
+  .static-card {
+    padding: 22px 0 18px 0;
   }
 }
